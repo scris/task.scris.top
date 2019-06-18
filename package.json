@@ -1,0 +1,11 @@
+{
+  "name": "lvt",
+  "version": "0.0.1",
+  "description": "Linx.vue is a vue boilerplate to create applications that run on Web, Mobile Phones and Standalone Devices in one go. ",
+  "author": "Dominik <slaaker@126.com>",
+  "license": null,
+  "main": "electron.js",
+  "devDependencies": {
+    "electron": "^3.0.2"
+  }
+}

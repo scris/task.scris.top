@@ -1,0 +1,167 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="minimal-ui,width=device-width"><link rel=apple-touch-icon href=./task.png><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=white><title>Scris Task</title><style>@media screen and (orientation:landscape) {
+          #container {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            transform: translateY(-30%);
+            transform: translateX(-10%);
+          }
+        }
+        
+        @media screen and (orientation:portrait) {
+          #container {
+            position: absolute;
+            top: 4%;
+            left: 10%;
+            transform: translateY(-30%);
+            transform: translateX(-10%);
+          }
+        }
+
+        body {
+          background-color: #fdfdfd;
+          background-repeat: no-repeat;
+          background-position-x: center;
+          background-position-y: 100%;
+          background-attachment: fixed;
+          background-size: 100% auto;
+          font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+        }
+        #today {
+          align-content: center;
+          text-align: center;
+        }
+        a:link {
+          color: rgb(168, 168, 168);
+          text-decoration: none;
+        }
+        a:visited {
+          color: rgb(114, 114, 114);
+          text-decoration: none;
+        }
+        a:hover {
+          color: rgb(179, 179, 179);
+          text-decoration: underline;
+        }
+        a:active {
+          color: rgb(0, 0, 0);
+          text-decoration: underline;
+        }
+        .text {
+          font-size: 14px;
+        }
+        .item {
+          padding: 18px 0;
+        }
+        .box-card {
+          width: 480px;
+        }
+        .task-card {
+          width: 420px;
+        }
+        #footer {
+          margin: 2em 0 0 0;
+        }
+        #footer span {
+          color: dimgrey;
+        }
+        .input {
+          width: 15em;
+          display: inline-block;
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          border: 0 solid #b7b7b7;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          font: normal normal 17px/normal Arial, Helvetica, sans-serif;
+          color: rgba(0,0,0,1);
+          -o-text-overflow: clip;
+          text-overflow: clip;
+          background: rgba(252,252,252,1);
+          text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+          -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+          -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+          -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+          transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        }
+        .inputsmall {
+          width: 8em;
+        }
+        .button {
+          display: inline-block;
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          cursor: pointer;
+          padding: 0.6em 0 0 0;
+          border: none;
+          text-align: left;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          font: normal normal bold 17px/normal Arial, Helvetica, sans-serif;
+          color: rgba(0,0,0,0.9);
+          -o-text-overflow: clip;
+          text-overflow: clip;
+          background: rgba(255,255,255,0.9);
+          -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+        }
+        .taskpane {
+          padding: 1em 0 1em 0;
+          border: none;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          font: normal normal 17px/normal Arial, Helvetica, sans-serif;
+          color: rgba(0,0,0,0.9);
+          -o-text-overflow: clip;
+          text-overflow: clip;
+          background: rgba(255,255,255,0.9);
+          -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+        }
+        .tasktitle {
+          font: normal normal bold 24px/normal Arial, Helvetica, sans-serif;
+        }
+        .tasktime {
+          padding: 0.4em 0 0 0;
+          color: lightslategray;
+        }
+        .taskleft {
+            float: left;
+            width: 15em;
+        }
+        .taskright {
+          margin: 1em 0 0 15em;
+        }
+        .taskmore {
+          padding: 0.6em 0 0 0;
+          border: none;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          font: normal normal 17px/normal Arial, Helvetica, sans-serif;
+          color: rgba(0,0,0,0.9);
+          -o-text-overflow: clip;
+          text-overflow: clip;
+          background: rgba(255,255,255,0.9);
+          -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+          clear: left;
+        }
+        .inputwhited {
+          background: white;
+        }
+        .loginbtn {
+          margin-top: 1em;
+        }
+        @media screen and (max-width: 600px) {
+          .inputwithpadding {
+            padding: 0.6em 0 0 0;
+          }
+        }</style><link href=static/css/app.5f7770dec700ea0c690f8d2331a5a8ab.css rel=stylesheet></head><body><div id=container><div id=app></div></div><script type=text/javascript src=static/js/manifest.37a2ecbb1d1b7e6c9ada.js></script><script type=text/javascript src=static/js/vendor.068c39833d9f825bda84.js></script><script type=text/javascript src=static/js/app.d20e9814f255e148d62a.js></script></body></html>
