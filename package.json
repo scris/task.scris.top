@@ -6,6 +6,6 @@
   "license": null,
   "main": "electron.js",
   "devDependencies": {
-    "electron": "^3.0.2"
+    "electron": "^9.1.0"
   }
 }
